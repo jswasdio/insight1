@@ -1,28 +1,27 @@
+
 # coding: utf-8
 
-# In[ ]:
+# #Breadth First Search Algorithms
+# #Reference from MIT online opencourseware 6.006 Introduction to algorithem
+# 
+# BFS (V,Adj,s): See CLRS for queue-based implementation 
+#     level = { s: 0 } 
+#     parent = {s : None } 
+#     i = 1 
+#     frontier = [s] # previous level, i−1 
+#     while frontier: 
+#         next = [ ] # next level, i 
+#         for u in frontier: 
+#             for v in Adj[u]: 
+#                 if v not in level: # not yet seen 
+#                     level[v] = i # level[u] + 1 
+#                     parent[v] = u 
+#                     next.append(v) 
+#         frontier = next 
+#         i + =1
+# 
 
-#Breadth First Search Algorithms
-#Reference from MIT online opencourseware 6.006 Introduction to algorithem
-
-BFS (V,Adj,s): See CLRS for queue-based implementation 
-    level = { s: 0 } 
-    parent = {s : None } 
-    i = 1 
-    frontier = [s] # previous level, i−1 
-    while frontier: 
-        next = [ ] # next level, i 
-        for u in frontier: 
-            for v in Adj[u]: 
-                if v not in level: # not yet seen 
-                    level[v] = i # level[u] + 1 
-                    parent[v] = u 
-                    next.append(v) 
-        frontier = next 
-        i + =1
-
-
-# In[102]:
+# In[106]:
 
 import csv
 
@@ -121,7 +120,7 @@ def find_connections_BFS (payer,payee,degree):
 print('find_connection_BFS completed')
 
 
-# In[103]:
+# In[107]:
 
 #validate users connection for feature1
 with open(stream_filename, 'r', encoding='utf-8') as streamfile:
@@ -147,7 +146,7 @@ with open(stream_filename, 'r', encoding='utf-8') as streamfile:
 print('feature1_completed')
 
 
-# In[104]:
+# In[108]:
 
 #validate users connection for feature2
 with open(stream_filename, 'r', encoding='utf-8') as streamfile:
@@ -182,7 +181,7 @@ print('feature2_completed')
             
 
 
-# In[105]:
+# In[109]:
 
 #validate users connection for feature3
 with open(stream_filename, 'r', encoding='utf-8') as streamfile:
